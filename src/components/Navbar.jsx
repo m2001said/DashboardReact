@@ -22,9 +22,8 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
       <span
         style={{ background: dotColor }}
         className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2"
-      >
-        {icon}
-      </span>
+      />
+      {icon}
     </button>
   </TooltipComponent>
 );
@@ -50,21 +49,23 @@ const Navbar = () => {
     handleResize();
     // you should remove eventListener after you get your information
     return () => window.removeEventListener("resize", handleResize);
-    //i need to make it initially when the site is open
+    //i need to make it initially when the site is open and not [screenSize] because it will be done every time screen change
   }, []);
-  //
+
+  // after i know the width please check it and don't open Menu in small screens
   useEffect(() => {
     if (screenSize <= 900) {
       setActiveMenu(false);
     } else {
       setActiveMenu(true);
     }
+    // of course the change will be in every screenSize
   }, [screenSize]);
 
   //
   return (
     <div className="flex justify-between p-2 md:mx-6 relative">
-      {/* ---------- button --------- */}
+      {/* ---------- Menu button --------- */}
       <NavButton
         title="Menu"
         customFunc={() =>
@@ -74,13 +75,17 @@ const Navbar = () => {
         icon={<AiOutlineMenu />}
       />
 
+      {/* ----------  buttons in right --------- */}
       <div className="flex">
+        {/* ---------- Cart button --------- */}
         <NavButton
           title="Cart"
           customFunc={() => handleClick("cart")}
           color="blue"
           icon={<FiShoppingCart />}
         />
+
+        {/* ---------- Chat button --------- */}
         <NavButton
           title="Chat"
           customFunc={() => handleClick("chat")}
@@ -88,6 +93,8 @@ const Navbar = () => {
           dotColor="#03C9D7"
           icon={<BsChatLeft />}
         />
+
+        {/* ---------- notification button --------- */}
         <NavButton
           title="Notifications"
           customFunc={() => handleClick("notification")}
@@ -95,6 +102,7 @@ const Navbar = () => {
           dotColor="#03C9D7"
           icon={<RiNotification3Line />}
         />
+
         {/* profile button */}
         <TooltipComponent content="Profile" position="BottomCenter">
           <div

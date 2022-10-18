@@ -42,7 +42,8 @@ const App = () => {
           </div>
 
           {activeMenu ? (
-            <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg:white">
+            // sidebar will make it above the navbar if you don't write it ,it will be below the nav
+            <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white">
               <Sidebar />
             </div>
           ) : (

@@ -39,7 +39,8 @@ module.exports = {
         590: "590px",
       },
       backgroundImage: {
-        "hero-pattern": "url('https://i.ibb.co/MkvLDfb/Rectangle-4389.png')",
+        "hero-pattern":
+          "url('https://img.freepik.com/free-vector/progress-concept-illustration_114360-1522.jpg?w=740&t=st=1666075881~exp=1666076481~hmac=b98d8643fc6893b94311b9bfb69411d44e005c7883059fe6476d34d1010e1f68')",
       },
     },
   },
