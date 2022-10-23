@@ -10,7 +10,7 @@ import avatar from "../data/avatar.jpg";
 import { Cart, Chat, Notification, UserProfile } from ".";
 import { useStateContext } from "../contexts/ContextProvider";
 
-// make a component of Button in nav
+// make a component of Button in nav so if i can use it
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
   <TooltipComponent content={title} position="BottomCenter">
     <button
@@ -75,60 +75,6 @@ const Navbar = () => {
         color={currentColor}
         icon={<AiOutlineMenu />}
       />
-
-      {/* ----------  buttons in right --------- */}
-      <div className="flex">
-        {/* ---------- Cart button --------- */}
-        <NavButton
-          title="Cart"
-          customFunc={() => handleClick("cart")}
-          color={currentColor}
-          icon={<FiShoppingCart />}
-        />
-
-        {/* ---------- Chat button --------- */}
-        <NavButton
-          title="Chat"
-          customFunc={() => handleClick("chat")}
-          color={currentColor}
-          dotColor="#03C9D7"
-          icon={<BsChatLeft />}
-        />
-
-        {/* ---------- notification button --------- */}
-        <NavButton
-          title="Notifications"
-          customFunc={() => handleClick("notification")}
-          color={currentColor}
-          dotColor="#03C9D7"
-          icon={<RiNotification3Line />}
-        />
-
-        {/* profile button */}
-        <TooltipComponent content="Profile" position="BottomCenter">
-          <div
-            className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg "
-            onClick={() => handleClick("userProfile")}
-          >
-            <img
-              src={avatar}
-              alt="img of user"
-              className="rounded-full w-8 h-8 "
-            />
-            <p>
-              <span className="text-gray-400 text-14 ">Hi,</span>{" "}
-              <span className="text-gray-400 text-14 ">Mohamed</span>
-            </p>
-            <MdKeyboardArrowDown className="text-gray-400 text-14 " />
-          </div>
-        </TooltipComponent>
-
-        {/* if you click on any of these buttons plz open it */}
-        {isClicked.cart && <Cart />}
-        {isClicked.chat && <Chat />}
-        {isClicked.notification && <Notification />}
-        {isClicked.userProfile && <UserProfile />}
-      </div>
     </div>
   );
 };

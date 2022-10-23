@@ -26,12 +26,23 @@ import "./App.css";
 
 const App = () => {
   const {
+    setCurrentColor,
+    setCurrentMode,
+    currentMode,
     activeMenu,
+    currentColor,
     themeSettings,
     setThemeSettings,
-    currentColor,
-    currentMode,
   } = useStateContext();
+
+  useEffect(() => {
+    const currentThemeColor = localStorage.getItem("colorMode");
+    const currentThemeMode = localStorage.getItem("themeMode");
+    if (currentThemeColor && currentThemeMode) {
+      setCurrentColor(currentThemeColor);
+      setCurrentMode(currentThemeMode);
+    }
+  }, []);
   return (
     <div className={currentMode === "Dark" ? "dark" : ""}>
       <BrowserRouter>
@@ -61,7 +72,7 @@ const App = () => {
 
           <div
             className={`dark:bg-main-dark-bg bg-main-bg min-h-screen  w-full ${
-              activeMenu ? "md:ml-72" : "flex"
+              activeMenu ? "md:ml-72" : "flex-2"
             }`}
           >
             <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg  navbar w-full">
