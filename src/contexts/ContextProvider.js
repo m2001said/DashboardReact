@@ -19,6 +19,7 @@ export const ContextProvider = ({ children }) => {
 
   const setMode = (e) => {
     setCurrentMode(e.target.value);
+    //don't forget to add it to the localStorage so when he refresh the page it will still the choice which he choose
     localStorage.setItem("themeMode", e.target.value);
   };
 
@@ -32,7 +33,6 @@ export const ContextProvider = ({ children }) => {
     setIsClicked({ ...initialState, [clicked]: true });
 
   return (
-    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <StateContext.Provider
       value={{
         currentColor,

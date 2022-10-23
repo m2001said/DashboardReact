@@ -38,6 +38,7 @@ const Navbar = () => {
     handleClick,
     screenSize,
     setScreenSize,
+    currentColor,
   } = useStateContext();
 
   // to get the width of any entire Screen
@@ -71,7 +72,7 @@ const Navbar = () => {
         customFunc={() =>
           setActiveMenu((prevStatus) => setActiveMenu(!prevStatus))
         }
-        color="blue"
+        color={currentColor}
         icon={<AiOutlineMenu />}
       />
 
@@ -81,7 +82,7 @@ const Navbar = () => {
         <NavButton
           title="Cart"
           customFunc={() => handleClick("cart")}
-          color="blue"
+          color={currentColor}
           icon={<FiShoppingCart />}
         />
 
@@ -89,7 +90,7 @@ const Navbar = () => {
         <NavButton
           title="Chat"
           customFunc={() => handleClick("chat")}
-          color="blue"
+          color={currentColor}
           dotColor="#03C9D7"
           icon={<BsChatLeft />}
         />
@@ -98,7 +99,7 @@ const Navbar = () => {
         <NavButton
           title="Notifications"
           customFunc={() => handleClick("notification")}
-          color="blue"
+          color={currentColor}
           dotColor="#03C9D7"
           icon={<RiNotification3Line />}
         />
