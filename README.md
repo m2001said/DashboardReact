@@ -1,6 +1,6 @@
 # Dashboard with Reactjs & Tailwind & Syncfusion
 
-## [Live Demo](https://m2001said.github.io/DashboardReact/ecommerce)
+## [Live Demo](https://m2001said.github.io/DashboardReact)
 
 ### This is a great tutorail from Javascript Mastery on youtube
 
