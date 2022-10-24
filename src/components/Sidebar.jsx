@@ -30,7 +30,7 @@ const Sidebar = () => {
           {/* shoppy logo and cancel button */}
           <div className="flex justify-between items-center">
             <Link
-              to="/"
+              to="/DashboardReact"
               onClick={() => handleCloseSideBar}
               className="items-center gap-3 ml-3 mt-4 flex text-xl font-extralight tracking-tight dark:text-white text-slate-900"
             >
